@@ -1,0 +1,17 @@
+C:\Users\Betrayal\source\repos\Balance\Balance\bin\Debug\Balance.exe.config
+C:\Users\Betrayal\source\repos\Balance\Balance\bin\Debug\Balance.exe
+C:\Users\Betrayal\source\repos\Balance\Balance\bin\Debug\Balance.pdb
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.csproj.AssemblyReference.cache
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.csproj.SuggestedBindingRedirects.cache
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\View\Windows\MainWindow.g.cs
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\App.g.cs
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance_MarkupCompile.cache
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance_MarkupCompile.lref
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\View\Windows\MainWindow.baml
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.g.resources
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.Properties.Resources.resources
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.csproj.GenerateResource.cache
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.csproj.CoreCompileInputs.cache
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.exe
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\Balance.pdb
+C:\Users\Betrayal\source\repos\Balance\Balance\obj\Debug\App.baml
