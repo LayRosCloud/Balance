@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Balance.View.Windows"
+        xmlns:mv="clr-namespace:Balance.ModelView"
+        xmlns:pg="clr-namespace:Balance.View.Pages"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="450" 
@@ -14,62 +16,42 @@
         ResizeMode="CanResizeWithGrip"
         WindowStyle="None"
         AllowsTransparency="True"
-        Background="Transparent">
+        Background="Transparent"
+        >
+    <Window.DataContext>
+        <mv:MainViewModel/>
+    </Window.DataContext>
     <Border CornerRadius="10 10 0 10">
         <Border.Background>
             <SolidColorBrush Color="#434242"/>
         </Border.Background>
-        
+
         <DockPanel>
             <Grid Height="25" DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="75"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle/>
+                <Rectangle MouseDown="Rectangle_MouseLeftButtonDown" Fill="Transparent"/>
                 <WrapPanel Grid.Column="1" VerticalAlignment="Center">
-                    <Button Style="{StaticResource UpperButtonMenu}">
-                        <Button.Content>
-                            <Border Height="10" Width="10" CornerRadius="25" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border.Background>
-                                    <SolidColorBrush Color="#FED049"/>
-                                </Border.Background>
-                            </Border>
-                        </Button.Content>
-                    </Button>
-                    <Button Style="{StaticResource UpperButtonMenu}">
-                        <Button.Content>
-                            <Border Height="10" Width="10" CornerRadius="25" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border.Background>
-                                    <SolidColorBrush Color="#68B984"/>
-                                </Border.Background>
-                            </Border>
-                        </Button.Content>
-                    </Button>
-                    <Button Style="{StaticResource UpperButtonMenu}">
-                        <Button.Content>
-                            <Border Height="10" Width="10" CornerRadius="25" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Border.Background>
-                                    <SolidColorBrush Color="#D23369"/>
-                                </Border.Background>
-                            </Border>
-                        </Button.Content>
-                    </Button>
+                    <Button Command="{Binding HideApplication}" Background="#FED049" BorderBrush="#FFC8A335" Style="{StaticResource UpperButtonMenu}"/>
+                    <Button Command="{Binding ChangeSizeApplication}" Background="#68B984" BorderBrush="#FF56946B" Style="{StaticResource UpperButtonMenu}"/>
+                    <Button Command="{Binding ExitFromApplication}" Background="#D23369" BorderBrush="#FF98224A" Style="{StaticResource UpperButtonMenu}"/>
+
                 </WrapPanel>
             </Grid>
-            
+
             <Border DockPanel.Dock="Top" Height="50" VerticalAlignment="Top" Margin="10 0" CornerRadius="25">
                 <Border.Background>
                     <SolidColorBrush Color="#222222"/>
                 </Border.Background>
                 <!--Верхнее Меню-->
-                <WrapPanel>
-                    
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Command="{Binding ChangePageToExpenses}" Content="Список расходов" Style="{StaticResource MenuButton}"/>
+                    <Button Command="{Binding ChangePageToSettings}" Content="Настройки" Style="{StaticResource MenuButton}"/>
                 </WrapPanel>
-                
             </Border>
-            <Frame Margin="0 10 0 0"/>
+            <Frame x:Name="mainFrame" Margin="0 10 0 0" Content="{Binding MainPage, Mode=OneWay}" NavigationUIVisibility="Hidden"/>
         </DockPanel>
-        
     </Border>
 </Window>
