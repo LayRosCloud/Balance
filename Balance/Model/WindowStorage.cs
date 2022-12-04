@@ -3,9 +3,11 @@ using System.Windows.Controls;
 
 namespace Balance.Model
 {
-    sealed internal class WindowStorage
+    internal static class WindowStorage
     {
         private static MainWindow _main;
+
+        private static Frame _frame;
 
         public static MainWindow MainWindow
         {
@@ -15,11 +17,12 @@ namespace Balance.Model
             }
             set 
             {
-                if(_main == null) 
-                    _main = value; 
+                if (_main == null)
+                {
+                    _main = value;
+                }
             }
         }
-        private static Frame _frame;
 
         public static Frame Frame
         {
@@ -30,7 +33,9 @@ namespace Balance.Model
             set
             {
                 if (_frame == null)
+                {
                     _frame = value;
+                }
             }
         }
 

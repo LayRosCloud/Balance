@@ -22,16 +22,44 @@
                                     <ColumnDefinition Width="75"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Image}"/>
+                                <Button Cursor="Hand">
+                                    <Image Source="{Binding ImageRelative}" Width="75" Height="75"/>
+                                </Button>
                                 <WrapPanel Grid.Column="1">
                                     <StackPanel>
-                                        <TextBox Text="{Binding Name}" Background="Transparent" BorderBrush="Transparent" Width="400" Foreground="#FFF" FontSize="20"/>
-                                        <WrapPanel>
-                                            <ComboBox Width="400" DisplayMemberPath="Name" SelectedValuePath="ID" ItemsSource="{Binding Category.AllCategories, Mode=OneWay}" Text="{Binding Category.Name}" Background="Transparent" Foreground="#FFF"/>
-                                            <TextBox Text="{Binding Price}"/>
-                                        </WrapPanel>
+                                        <TextBox Text="{Binding Name}" 
+                                                 Background="Transparent" 
+                                                 BorderBrush="Transparent" 
+                                                 Width="400" 
+                                                 Foreground="#FFF" 
+                                                 FontSize="20"/>
+                                        <ComboBox Width="400" 
+                                                  DisplayMemberPath="Name" 
+                                                  SelectedValuePath="ID" 
+                                                  ItemsSource="{Binding Category.AllCategories, Mode=OneWay}" 
+                                                  Text="{Binding Category.Name}" 
+                                                  Background="Transparent" 
+                                                  Foreground="#FFF"
+                                                  BorderThickness="0"/>
+                                        
                                     </StackPanel>
-                                    <Button Content="Сохранить" Width="100" VerticalAlignment="Center" Height="40"/>
+                                    <TextBox Text="{Binding Price}" 
+                                             Width="50" 
+                                             BorderThickness="0" 
+                                             Background="Transparent"
+                                             HorizontalContentAlignment="Center"
+                                             VerticalContentAlignment="Center"
+                                             FontSize="20"
+                                             Foreground="#FFF"/>
+                                    <Button Content="Сохранить" 
+                                            Width="100" 
+                                            VerticalAlignment="Center"
+                                            BorderBrush="Transparent"
+                                            Background="Transparent"
+                                            Height="40"
+                                            Foreground="#FFF"
+                                            BorderThickness="0"
+                                            />
                                 </WrapPanel>
                             </Grid>
                         </Border>
@@ -39,12 +67,22 @@
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment" 
+                                Value="Stretch" />
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>
             <WrapPanel HorizontalAlignment="Center">
-                <Button Command="{Binding AddExpenseItem}" Width="100" Background="Transparent" BorderBrush="Transparent" Content="Добавить" Foreground="#FFF"/>
+                <Button Command="{Binding AddExpenseItem}" 
+                        Background="Transparent" 
+                        BorderBrush="Transparent" 
+                        Foreground="#FFF">
+                    <Button.Content>
+                        <Border Width="200" Height="25" Background="#332FD0" CornerRadius="5">
+                            <TextBlock Text="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Button.Content>
+                </Button>
             </WrapPanel>
         </StackPanel>
     </ScrollViewer>

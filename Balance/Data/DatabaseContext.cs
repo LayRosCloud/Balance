@@ -23,7 +23,7 @@ namespace Balance.Data
             }
             catch (InvalidOperationException)
             {
-                MessageBox.Show("Подключение уже открыто!");
+                Log.SendMessage("Подключение открыто!");
             }
         }
         public static void CloseConnection()
@@ -35,7 +35,7 @@ namespace Balance.Data
             }
             catch (InvalidOperationException)
             {
-                MessageBox.Show("Подключение закрыто!");
+                Log.SendMessage("Подключение закрыто!");
             }
         }
 

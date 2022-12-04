@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Balance.View.Windows"
         xmlns:mv="clr-namespace:Balance.ModelView"
-        xmlns:pg="clr-namespace:Balance.View.Pages"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="450" 
@@ -51,7 +50,16 @@
                     <Button Command="{Binding ChangePageToSettings}" Content="Настройки" Style="{StaticResource MenuButton}"/>
                 </WrapPanel>
             </Border>
-            <Frame x:Name="mainFrame" Margin="0 10 0 0" Content="{Binding MainPage, Mode=OneWay}" NavigationUIVisibility="Hidden"/>
+            <Grid DockPanel.Dock="Bottom" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <TextBlock x:Name="logs"  Foreground="#FFF" HorizontalAlignment="Left"/>
+            </Grid>
+            <Frame
+                   Margin="0 10 0 0" 
+                   NavigationUIVisibility="Hidden" 
+                   Source="{Binding Path=MainPage, 
+                    Mode=TwoWay, 
+                    NotifyOnTargetUpdated=True}"/>
+            
         </DockPanel>
     </Border>
 </Window>

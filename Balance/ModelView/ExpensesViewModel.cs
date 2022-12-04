@@ -3,7 +3,6 @@ using Balance.Model;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows;
 using System.Windows.Input;
 
 namespace Balance.ModelView
@@ -12,37 +11,42 @@ namespace Balance.ModelView
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<Expense> expenses;
+        private ObservableCollection<Expense> _expenses;
 
         public ExpensesViewModel()
         {
 
-            expenses = new ObservableCollection<Expense>();
+            _expenses = new ObservableCollection<Expense>();
 
             AddExpenseItem = new DelegateCommand(AddExpense);
 
             DatabaseContext.OpenConnection();
+
             Expense expenseItem = new Expense();
 
             try
             {
                 foreach (var expense in expenseItem.SelectAllRows())
                 {
-                    expenses.Add(expense);
+                    _expenses.Add(expense);
                 }
             }
             catch (IndexOutOfRangeException)
             {
-                MessageBox.Show("Расходов нет");
+                Log log = new Log("Расходов нет");
+                log.SendMessage();
             }
         }
-        public ObservableCollection<Expense> Expenses => expenses;
+
+        public ObservableCollection<Expense> Expenses => _expenses;
+
         public ICommand AddExpenseItem { get; private set; }
 
         private void AddExpense(object obj)
         {
             Expense expense = new Expense();
-            expenses.Add(expense);
+
+            _expenses.Add(expense);
         }
     }
 }

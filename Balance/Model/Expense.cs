@@ -1,9 +1,7 @@
 ﻿using Balance.Data;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.SQLite;
-using System.Windows;
 
 namespace Balance.Model
 {
@@ -39,6 +37,10 @@ namespace Balance.Model
         public int CategoryID { get; set; }
         public double Price { get; set; }
         public string Image { get; set; }
+        public string ImageRelative 
+        {
+            get => "/" + Image;
+        }
         
         public Category Category {
             get
